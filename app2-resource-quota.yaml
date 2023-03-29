@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: app2-resource-quota
+  namespace: app2-namespace
+spec:
+  hard:
+    cpu: "100m"

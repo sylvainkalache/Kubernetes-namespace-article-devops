@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: app1-resource-quota
+  namespace: app1-namespace
+spec:
+  hard:
+    cpu: "800m"

@@ -26,7 +26,8 @@ https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/4a7ab
 For App2, we will limit the CPU usage to 10% of the cluster. We create a [app2-resource-quota.yaml](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app2-resource-quota.yaml) file containing the following.
 [app2-resource-quota.yaml](app2-resource-quota.yaml)
 To apply the resource quotas, we need to run the  [following commands](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/apply-quotas.sh).
-[apply-quotas.sh](apply-quotas.sh)
+https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/1f4fa6a0f48695b621e24b9c59335baa8f50905b/apply-quotas.sh#L1-L2
+
 We confirm that the quotas have been applied with the  [following commands](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/confirm-quotas.sh).
 [confirm-quotas.sh](confirm-quotas.sh)
 App1 and App2 are respectively managed by Team1 and Team2. Let’s give them the appropriate deployment rights.

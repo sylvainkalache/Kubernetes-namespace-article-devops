@@ -16,8 +16,7 @@ App2: A backend to manage orders and customers maintained by Team2
 Both applications need to be deployed in the same Kubernetes cluster for cost optimization. Let’s look at how we can create a basic namespace setup. Before we start: for each step, a screenshot of the commands is provided as well as a link to a GitHub file for easy copy/pasting.  [Here is a link to the Github repo](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops).
 
 The first step is to create namespaces for each application by running these [kubectl commands](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/create-namespaces.sh).
-```[create-namespaces.sh](https://raw.githubusercontent.com/sylvainkalache/Kubernetes-namespace-article-devops/main/create-namespaces.sh)
-```
+[create-namespaces.sh](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/4d96124774c5a171e1928888936cc7d85494055b/create-namespaces.sh#L1)
 Then, we can configure access control and resource quotas for each namespace. Role-Based Access Control (RBAC) policies can limit which users or service accounts can access or manage resources in each namespace. In the example below, we will define a resource quota to restrict the amount of CPU each app can use.
 
 For App1, we will limit the CPU usage to 80% of the cluster. Therefore, we create a  [app1-resource-quota.yaml](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app1-resource-quota.yaml)  file containing the following.

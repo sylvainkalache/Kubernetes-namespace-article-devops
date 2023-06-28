@@ -19,8 +19,8 @@ The first step is to create namespaces for each application by running these [ku
 https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/4d96124774c5a171e1928888936cc7d85494055b/create-namespaces.sh#L1-L2
 Then, we can configure access control and resource quotas for each namespace. Role-Based Access Control (RBAC) policies can limit which users or service accounts can access or manage resources in each namespace. In the example below, we will define a resource quota to restrict the amount of CPU each app can use.
 
-For App1, we will limit the CPU usage to 80% of the cluster. Therefore, we create a  [app1-resource-quota.yaml](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app1-resource-quota.yaml)  file containing the following.
-https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/4a7ab6a3679955e030f6a1fdbd280a67c28f0fa9/app1-resource-quota.yaml#L1C1-L1C1https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/4a7ab6a3679955e030f6a1fdbd280a67c28f0fa9/app1-resource-quota.yaml#L1-L16
+For App1, we will limit the CPU usage to 80% of the cluster. Therefore, we create a  [app1-resource-quota.yaml](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app1-resource-quota.yaml) file containing the following.
+https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/4a7ab6a3679955e030f6a1fdbd280a67c28f0fa9/app1-resource-quota.yaml#L1-L16
 
 For App2, we will limit the CPU usage to 10% of the cluster. We create a [app2-resource-quota.yaml](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app2-resource-quota.yaml) file containing the following.
 [app2-resource-quota.yaml](app2-resource-quota.yaml)

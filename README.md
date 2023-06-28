@@ -21,7 +21,7 @@ Then, we can configure access control and resource quotas for each namespace. Ro
 
 For App1, we will limit the CPU usage to 80% of the cluster. Therefore, we create a [app1-resource-quota.yaml](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app1-resource-quota.yaml) file containing the following.
 
-https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/4a7ab6a3679955e030f6a1fdbd280a67c28f0fa9/app1-resource-quota.yaml#L1-L8
+https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/4a7ab6a3679955e030f6a1fdbd280a67c28f0fa9/app1-resource-quota.yaml
 
 For App2, we will limit the CPU usage to 10% of the cluster. We create a [app2-resource-quota.yaml](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app2-resource-quota.yaml) file containing the following.
 [app2-resource-quota.yaml](app2-resource-quota.yaml)

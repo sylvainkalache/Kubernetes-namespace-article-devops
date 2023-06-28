@@ -24,26 +24,35 @@ For App1, we will limit the CPU usage to 80% of the cluster. Therefore, we creat
 https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/4a7ab6a3679955e030f6a1fdbd280a67c28f0fa9/app1-resource-quota.yaml#L1-L8
 
 For App2, we will limit the CPU usage to 10% of the cluster. We create a [app2-resource-quota.yaml](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app2-resource-quota.yaml) file containing the following.
-[app2-resource-quota.yaml](app2-resource-quota.yaml)
+https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/c49fb6620ef87e32ce2a6d4aa1a1a9fb3ce900d4/app2-resource-quota.yaml#L1-L8
+
 To apply the resource quotas, we need to run the  [following commands](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/apply-quotas.sh).
 https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/1f4fa6a0f48695b621e24b9c59335baa8f50905b/apply-quotas.sh#L1-L2
 
 We confirm that the quotas have been applied with the  [following commands](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/confirm-quotas.sh).
-[confirm-quotas.sh](confirm-quotas.sh)
+https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/c49fb6620ef87e32ce2a6d4aa1a1a9fb3ce900d4/confirm-quotas.sh#L1-L3
+
 App1 and App2 are respectively managed by Team1 and Team2. Let’s give them the appropriate deployment rights.
 
 First, we will create a Role for each namespace that allows managing deployments. Let’s start with App1 by creating the  [_app1-role.yaml_](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app1-resource-quota.yaml) file.
-[app1-resource-quota.yaml](app1-resource-quota.yaml)
-And proceed with the same for App2 with the file [_app2-role.yaml_](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app2-role.yaml).
-[app2-role.yaml](app2-role.yaml)
+https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/c49fb6620ef87e32ce2a6d4aa1a1a9fb3ce900d4/app1-resource-quota.yaml#L1-L8
+
+And proceed with the same for App2 with the file [_app2-resource-quota.yaml_](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app2-resource-quota.yaml).
+https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/c49fb6620ef87e32ce2a6d4aa1a1a9fb3ce900d4/app2-resource-quota.yaml#L1-L8
+
 The next step is to create RoleBinding resources to associate each role with the respective team.
 
 We start with the binding between App1 and Team1 with the file  [_app1-rolebinding.yaml_](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app1-rolebinding.yaml).
-[app1-rolebinding.yaml](app1-rolebinding.yaml)
+https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/c49fb6620ef87e32ce2a6d4aa1a1a9fb3ce900d4/app1-rolebinding.yaml#L1-L13
+
+
 Now, let’s create the binding between App2 and Team2 with the file  [_app2-rolebinding.yaml_](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/app2-rolebinding.yaml).
-[app2-rolebinding.yaml](app2-rolebinding.yaml)
+https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/c49fb6620ef87e32ce2a6d4aa1a1a9fb3ce900d4/app2-rolebinding.yaml#L1-L13
+
 We apply the RBAC configurations using these [kubectl commands](https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/main/apply-roles-configuration.sh).
-[apply-roles-configuration.sh](apply-roles-configuration.sh)
+https://github.com/sylvainkalache/Kubernetes-namespace-article-devops/blob/c49fb6620ef87e32ce2a6d4aa1a1a9fb3ce900d4/apply-roles-configuration.sh#L1-L4
+
+
 Those are straightforward examples, and Kubernetes namespaces have countless more possibilities. However, namespaces have limitations that can impact their flexibility in certain use cases.
 
 For instance, when a team owns multiple microservices with distinct secrets and quotas, placing them in separate namespaces for isolation can lead to issues. Kubernetes lacked a common ownership concept for these namespaces, making it difficult to apply namespace-scoped policies uniformly across them.
